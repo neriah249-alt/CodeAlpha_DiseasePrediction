@@ -98,3 +98,28 @@ Prédire la présence de maladies cardiaques à partir de données médicales st
 ---
 
 ## 📁 Structure du projet
+CodeAlpha_DiseasePrediction/
+│
+├── README.md                 # Ce fichier
+├── requirements.txt          # Dépendances Python
+├── main.py                   # Script principal (pipeline complet)
+├── app.py                    # Application Streamlit interactive
+│
+├── src/
+│   ├── preprocess.py         # Chargement et nettoyage des données
+│   ├── train.py              # Entraînement des modèles
+│   ├── evaluate.py           # Visualisations et évaluation
+│   └── predict.py            # Prédiction sur nouveaux patients
+│
+├── data/
+│   └── (dataset optionnel)
+│
+├── results/
+│   ├── eda_heart_disease.png
+│   ├── model_comparison.png
+│   ├── confusion_matrix.png
+│   ├── roc_curves.png
+│   └── feature_importance.png
+│
+└── models/
+└── best_model.pkl        # Modèle SVM sauvegardé
