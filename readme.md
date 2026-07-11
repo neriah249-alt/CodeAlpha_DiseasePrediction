@@ -125,5 +125,3 @@ CodeAlpha_DiseasePrediction/
 │
 └── models/
 └── best_model.pkl        # Modèle SVM sauvegardé
-=======
->>>>>>> 31f7643781b01842a92266accdfb6d01146a48c1
