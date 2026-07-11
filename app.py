@@ -99,6 +99,38 @@ st.sidebar.markdown("""
 
 # Avertissement
 st.markdown("""
+<style>
+    .main-header {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #e74c3c;
+        text-align: center;
+    }
+    .sub-header {
+        font-size: 1.2rem;
+        color: #555;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .result-box {
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .risk-high { background-color: #ffcccc; color: #c0392b; }
+    .risk-moderate { background-color: #fff3cd; color: #856404; }
+    .risk-low { background-color: #d4edda; color: #155724; }
+    .warning-box {
+        background-color: #fff3cd;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 5px solid #ffc107;
+        color: #856404;  /* ← TEXTE MARRON FONCÉ, PAS BLANC */
+        font-size: 1rem;
+    }
+</style>
 <div class="warning-box">
 ⚠️ <b>Important :</b> Cette application est a titre demonstratif uniquement. 
 Consultez toujours un medecin pour un diagnostic medical.
