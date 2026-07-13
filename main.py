@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
 main.py
-Script principal — exécute tout le pipeline ML.
-
+Script principal — exécute tout le pipeline ML + sauvegarde le scaler
 Usage: python main.py
 """
 
 import sys
 import os
+import pickle
 
-# Ajouter src/ au path pour pouvoir importer les modules
+# Ajouter src/ au path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from preprocess import load_data, clean_data, split_and_scale, get_feature_names
@@ -32,6 +32,7 @@ def main():
     print(f"   Sain : {df['target'].value_counts()[0]} | Malade : {df['target'].value_counts()[1]}")
     
     X_train, X_test, y_train, y_test, scaler, X_train_s, X_test_s = split_and_scale(df)
+    print(f"   📚 Train : {X_train.shape[0]} | 🧪 Test : {X_test.shape[0]}")
     
     # ── ÉTAPE 2 : EDA ──
     print("\n📊 ÉTAPE 2 : Visualisations EDA")
@@ -59,9 +60,16 @@ def main():
     plot_roc_curves(models, X_test, X_test_s, y_test)
     plot_feature_importance(X_train, y_train, get_feature_names())
     
-    # ── ÉTAPE 5 : Sauvegarde ──
-    print("\n💾 ÉTAPE 5 : Sauvegarde du modèle")
+    # ── ÉTAPE 5 : Sauvegarde du modèle ET du scaler ──
+    print("\n💾 ÉTAPE 5 : Sauvegarde du modèle et du scaler")
     save_best_model(best_model, best_name)
+    
+    # 🔥 SAUVEGARDER LE SCALER (nouveau !)
+    scaler_path = os.path.join(os.path.dirname(__file__), 'models', 'scaler.pkl')
+    os.makedirs(os.path.dirname(scaler_path), exist_ok=True)
+    with open(scaler_path, 'wb') as f:
+        pickle.dump(scaler, f)
+    print(f"   ✅ Scaler sauvegardé : {scaler_path}")
     
     # ── ÉTAPE 6 : Prédictions ──
     print("\n🔮 ÉTAPE 6 : Prédictions sur exemples")
@@ -70,7 +78,7 @@ def main():
     for name, data in EXAMPLE_PATIENTS.items():
         result = predict_disease(data, model_dict, scaler)
         print(f"\n👤 {name}:")
-        print(f"   → {result['prediction']} ({result['probabilité']}%)")
+        print(f"   → 🩺 {result['prediction']} ({result['probabilité']}%)")
     
     print("\n" + "=" * 60)
     print("✅ PIPELINE TERMINÉ !")
