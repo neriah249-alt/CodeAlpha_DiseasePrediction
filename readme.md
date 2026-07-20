@@ -12,6 +12,14 @@ Prédire la présence de maladies cardiaques à partir de données médicales st
 
 ---
 
+## 🌐 Application en ligne
+
+🔗 **Lien de l'application** : [https://codealphadiseaseprediction-mijbvbeq7pjaapr77a97el.streamlit.app/](https://codealphadiseaseprediction-mijbvbeq7pjaapr77a97el.streamlit.app/)
+
+
+
+---
+
 ## 📊 Dataset
 
 - **Nom** : UCI Heart Disease Dataset
@@ -98,8 +106,6 @@ Prédire la présence de maladies cardiaques à partir de données médicales st
 ---
 
 ## 📁 Structure du projet
-
-<<<<<<< HEAD
 CodeAlpha_DiseasePrediction/
 │
 ├── README.md                 # Ce fichier
@@ -124,4 +130,63 @@ CodeAlpha_DiseasePrediction/
 │   └── feature_importance.png
 │
 └── models/
-└── best_model.pkl        # Modèle SVM sauvegardé
+├── best_model.pkl        # Modèle SVM sauvegardé
+└── scaler.pkl            # Scaler pour standardisation
+
+---
+
+## 🚀 Installation et utilisation
+
+### 1. Cloner le repository
+
+```bash
+git clone https://github.com/neriah249-alt/CodeAlpha_DiseasePrediction.git
+cd CodeAlpha_DiseasePrediction
+
+2. Installer les dépendances
+
+```bash
+pip install -r requirements.txt
+
+3. Exécuter le pipeline complet
+bash
+python main.py
+4. Lancer l'application Streamlit (local)
+
+bash
+streamlit run app.py
+
+L'application s'ouvrira automatiquement dans votre navigateur à l''adresse http://localhost:8501.
+
+📊 Visualisations générées
+Feuilles de calcul
+| Fichier                          | Description                             |
+| -------------------------------- | --------------------------------------- |
+| `results/eda_heart_disease.png`  | Analyse exploratoire des données        |
+| `results/model_comparison.png`   | Comparaison des métriques des modèles   |
+| `results/confusion_matrix.png`   | Matrice de confusion du meilleur modèle |
+| `results/roc_curves.png`         | Courbes ROC comparées                   |
+| `results/feature_importance.png` | Importance des variables                |
+
+🎯 Points clés du projet
+✅ Prétraitement robuste : Gestion des valeurs manquantes, standardisation
+✅ Multiple modèles : Comparaison de 4 algorithmes de classification
+✅ Métriques complètes : Accuracy, Precision, Recall, F1-Score, ROC-AUC
+✅ Visualisations : EDA, matrices de confusion, courbes ROC
+✅ Application interactive : Interface Streamlit avec validation des entrées
+✅ Détection des cas extrêmes : Alertes pour les valeurs anormales
+✅ Déploiement en ligne : Accessible via Streamlit Cloud
+
+📝 Auteur
+Nom : OLAFA Maurica Nériah Mondjissiola
+Stage : CodeAlpha Machine Learning Internship
+LinkedIn : Mauricia Olafa
+Date : 20 Juillet 2026
+🙏 Remerciements
+Merci à CodeAlpha pour cette opportunité de stage et l'accompagnement tout au long du projet.
+
+<div align="center">
+  <p>🎓 Projet réalisé dans le cadre du stage Machine Learning — CodeAlpha</p>
+  <p>Made with ❤️ and Python</p>
+</div>
+```
