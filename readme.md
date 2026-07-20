@@ -189,4 +189,3 @@ Merci à CodeAlpha pour cette opportunité de stage et l'accompagnement tout au 
   <p>🎓 Projet réalisé dans le cadre du stage Machine Learning — CodeAlpha</p>
   <p>Made with ❤️ and Python</p>
 </div>
-```
