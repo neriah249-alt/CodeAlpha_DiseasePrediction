@@ -106,6 +106,7 @@ Prédire la présence de maladies cardiaques à partir de données médicales st
 ---
 
 ## 📁 Structure du projet
+```texte
 CodeAlpha_DiseasePrediction/
 │
 ├── README.md                 # Ce fichier
@@ -132,7 +133,7 @@ CodeAlpha_DiseasePrediction/
 └── models/
 ├── best_model.pkl        # Modèle SVM sauvegardé
 └── scaler.pkl            # Scaler pour standardisation
-
+```
 ---
 
 ## 🚀 Installation et utilisation
@@ -189,3 +190,4 @@ Merci à CodeAlpha pour cette opportunité de stage et l'accompagnement tout au 
   <p>🎓 Projet réalisé dans le cadre du stage Machine Learning — CodeAlpha</p>
   <p>Made with ❤️ and Python</p>
 </div>
+```
